@@ -57,3 +57,16 @@ print("""You are lighter on the {moon}, because on the {moon}
 
 print(f"On the Moon, you would weigh about {mass_percentage} of your weight on Earth")
 print(f"On the Moon, you would weigh about {round(100/6, 1)}% of your weight on Earth")
+
+#Ejercicios
+name= "Ganymede"
+planet= "Mars"
+gravity= "1.43"
+
+
+template = """Gravity Facts about {name}
+----------------------------------------
+Planet Name: {planet}
+Gravity on {name}: {gravity} m/s2""".format(name=name,planet=planet,gravity=gravity)
+
+print(template)
