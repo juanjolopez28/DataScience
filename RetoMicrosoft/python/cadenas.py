@@ -35,3 +35,25 @@ print(sentences)
 for sentence in sentences:
     if 'temperature' in sentence.lower():
         print(sentence)
+
+
+#############
+mass_percentage = "1/6"
+text="Juan ha crecido %s"%mass_percentage
+print(text)
+
+#Podemos usar string con format
+
+text="On the Moon, you would weigh about {} of your weight on Earth".format(mass_percentage)
+
+#se puede usar indexes
+print("""You are lighter on the {0}, because on the {0} 
+... you would weigh about {1} of your weight on Earth""".format("Moon", mass_percentage))
+
+#se puede colocar palabras claves
+print("""You are lighter on the {moon}, because on the {moon} 
+... you would weigh about {mass} of your weight on Earth""".format(moon="Moon", mass=mass_percentage))
+#se puede usar fstrings
+
+print(f"On the Moon, you would weigh about {mass_percentage} of your weight on Earth")
+print(f"On the Moon, you would weigh about {round(100/6, 1)}% of your weight on Earth")
