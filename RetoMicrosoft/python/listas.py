@@ -42,3 +42,20 @@ print("The regular satellite moons of Jupiter are", regular_satellite_moons)
 
 regular_satellite_moons.sort(reverse=True)
 print("The regular satellite moons of Jupiter are", regular_satellite_moons)
+
+
+########EJERCICIO
+
+planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Neptune"]
+user_planet = input("Please enter the name of the planet (with a capital letter to start)")
+index=planets.index(user_planet)
+print("Estos son los planetas mas cercanos al sol",planets[:index])
+print("Estos son los planetas mas alejados al sol",planets[index+1:])
+
+
+
+
+
+
+
+
