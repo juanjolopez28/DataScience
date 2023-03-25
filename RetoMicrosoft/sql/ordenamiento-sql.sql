@@ -63,3 +63,71 @@ WHERE Name LIKE '%mountain%';
 SELECT ProductName, ListPrice
 FROM SalesLT.Product
 WHERE ProductName LIKE 'Mountain Bike Socks, _';
+
+/*EJERCICIO*/
+/*Considerar que el nombre lo ordena de forma ascendente*/
+SELECT Name, ListPrice
+FROM SalesLT.Product
+ORDER BY ListPrice DESC, Name ASC
+
+SELECT TOP (20) Name, ListPrice
+FROM SalesLT.Product
+ORDER BY ListPrice DESC;
+
+/*incluye duplicados*/
+SELECT TOP (20) WITH TIES Name, ListPrice
+FROM SalesLT.Product
+ORDER BY ListPrice DESC;
+
+/*porcentaje*/
+SELECT TOP (20) PERCENT WITH TIES Name, ListPrice
+FROM SalesLT.Product
+ORDER BY ListPrice DESC;
+
+
+SELECT Name, ListPrice
+FROM SalesLT.Product
+ORDER BY Name OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY;
+
+
+SELECT DISTINCT Color
+FROM SalesLT.Product;
+
+SELECT Name, ListPrice
+FROM SalesLT.Product 
+WHERE ListPrice > 1000.00
+ORDER BY ListPrice;
+
+SELECT Name, ListPrice
+FROM SalesLT.Product
+WHERE Name LIKE 'HL Road Frame %';
+
+
+SELECT Name, ListPrice
+FROM SalesLT.Product
+WHERE ProductNumber LIKE 'FR-_[0-9][0-9]_-[0-9][0-9]';
+
+
+SELECT ProductCategoryID, Name, ListPrice
+FROM SalesLT.Product
+WHERE ProductCategoryID IN (5,6,7);
+
+
+SELECT Name, ProductCategoryID, ProductNumber
+FROM SalesLT.Product
+WHERE ProductNumber LIKE 'FR%' OR ProductCategoryID IN (5,6,7);
+
+
+SELECT DISTINCT City,StateProvince  FROM SalesLT.Address
+ORDER BY City ASC
+
+/*Challenge*/
+
+SELECT TOP(10) PERCENT WITH TIES Name 
+FROM SalesLT.Product
+ORDER BY Weight DESC
+
+
+SELECT Name,Color,Size FROM SalesLT.Product
+WHERE ProductModelID = 1
+
