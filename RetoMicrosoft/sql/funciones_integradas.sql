@@ -84,6 +84,45 @@ SELECT SUM(c2) AS sum_nonnulls,
 FROM t1;
 
 
+/* Resumir datos con GROUP BY*/
+
+SELECT CustomerID, COUNT(*) AS OrderCount
+FROM Sales.SalesOrderHeader
+GROUP BY CustomerID
+ORDER BY CustomerID;
+
+/*esta consulta botará el error*/
+SELECT CustomerID, PurchaseOrderNumber, COUNT(*) AS OrderCount
+FROM Sales.SalesOrderHeader
+GROUP BY CustomerID;
+
+/*correcion*/
+SELECT CustomerID, PurchaseOrderNumber, COUNT(*) AS OrderCount
+FROM Sales.SalesOrderHeader
+GROUP BY CustomerID, PurchaseOrderNumber;
+
+SELECT CustomerID,
+      COUNT(*) AS OrderCount
+FROM Sales.SalesOrderHeader
+GROUP BY CustomerID
+HAVING COUNT(*) > 10;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
